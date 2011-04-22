@@ -38,7 +38,7 @@ class Nest2Architecture
         size.times do |j|
           temp = f.gets
           #puts "read: #{temp}"
-          size.times { |i|
+          size.times do |i|
             #puts "considering: #{temp[j]} [#{temp[j].class.to_s}]"
             if (temp[i] == 45) # '-'
               #puts "got empty..."

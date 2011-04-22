@@ -362,74 +362,73 @@ class GLUTViewer2
     case key
     ######## CURSOR MOVEMENT #########
     when 48 # move the cursor North
-        @displayer.moveCursor(N)
+      @displayer.moveCursor(N)
     when 49 # move the cursor North-East
-        @displayer.moveCursor(NE)
+      @displayer.moveCursor(NE)
     when 50 # move the cursor South-East
-        @displayer.moveCursor(SE)
+      @displayer.moveCursor(SE)
     when 51 # move the cursor South
-        @displayer.moveCursor(S)
+      @displayer.moveCursor(S)
     when 52 # move the cursor South-West
-        @displayer.moveCursor(SW)
+      @displayer.moveCursor(SW)
     when 53 # move the cursor North-West
-        @displayer.moveCursor(NW)
+      @displayer.moveCursor(NW)
     when 54 # move the cursor Up
-        @displayer.moveCursor(UP)
+      @displayer.moveCursor(UP)
     when 55 # move the cursor Down
-        @displayer.moveCursor(DOWN)
+      @displayer.moveCursor(DOWN)
 
     ######## VIEW MOVEMENT ############
     when 39 # ' ' ' move the view Up
-        @displayer.moveView("UP")
+      @displayer.moveView("UP")
     when 47 # ' / ' move the view Down
-        @displayer.moveView("DOWN")
+      @displayer.moveView("DOWN")
 
     when 65 # 'shift+A'
-        @animate = !@animate
-        setMessage("Animation is " + ((@animate)?("ON"):("OFF")))
+      @animate = !@animate
+      setMessage("Animation is " + ((@animate)?("ON"):("OFF")))
     when 122 # 'z'
-        @animateZ = !@animateZ
+      @animateZ = !@animateZ
     when 120 # 'x'
-        @animateX = !@animateX
+      @animateX = !@animateX
 
     ####### RESERVED MODE KEYS ########
     when 17 # 'ctrl-q'
-        quit
+      quit
     when 113 # 'q'
-       setMode(:quit)
-       setMessage("Quit? [y/n] _")
+      setMode(:quit)
+      setMessage("Quit? [y/n] _")
     when 15 # 'ctrl+o'
-        setMode(:load)
-        @loadFilename = ""
-        setMessage("Loading: _")
+      setMode(:load)
+      @loadFilename = ""
+      setMessage("Loading: _")
     when 14 # 'ctrl+n'
-        setMode(:new)
-        setMessage("[A]rchitecture, [R]ule set, or [S]imulation? _")
+      setMode(:new)
+      setMessage("[A]rchitecture, [R]ule set, or [S]imulation? _")
 
     ####### BUFFER CHANGE ########
     when 44 # '<' - change to previous buffer
-        previousBuffer
+      previousBuffer
     when 46 # '>' - change to the next buffer
-        nextBuffer
-
+      nextBuffer
 
     ####### CELL DISPLAY #########
     when 101 # 'e'
-        @displayer.drawEmpty = !@displayer.drawEmpty
-        setMessage(((@displayer.drawEmpty)?("Drawing"):("Hiding")) + " empty cells")
+      @displayer.drawEmpty = !@displayer.drawEmpty
+      setMessage(((@displayer.drawEmpty)?("Drawing"):("Hiding")) + " empty cells")
     when 110 # 'n'
-        @displayer.drawNil = !@displayer.drawNil
-        setMessage(((@displayer.drawNil)?("Drawing"):("Hiding")) + " nil cells")
+      @displayer.drawNil = !@displayer.drawNil
+      setMessage(((@displayer.drawNil)?("Drawing"):("Hiding")) + " nil cells")
     when 121 # 'y'
-        @displayer.drawType = GLArchitectureDisplayer::DRAW_FILLED
+      @displayer.drawType = GLArchitectureDisplayer::DRAW_FILLED
     when 117 # 'u'
-        @displayer.drawType = GLArchitectureDisplayer::DRAW_VALUES
+      @displayer.drawType = GLArchitectureDisplayer::DRAW_VALUES
     when 105 # 'i'
-        @displayer.drawType = GLArchitectureDisplayer::DRAW_IDS
+      @displayer.drawType = GLArchitectureDisplayer::DRAW_IDS
     when 111 # 'o'
-        @displayer.drawType = GLArchitectureDisplayer::DRAW_ORDER
+      @displayer.drawType = GLArchitectureDisplayer::DRAW_ORDER
     when 112 # 'p'
-        @displayer.drawType = GLArchitectureDisplayer::DRAW_ORDER_VALUE
+      @displayer.drawType = GLArchitectureDisplayer::DRAW_ORDER_VALUE
     end
   end
 
@@ -437,21 +436,21 @@ class GLUTViewer2
     #debug "special key was: #{key}"
     case key
     when GLUT::KEY_UP
-        @displayer.moveView("FORWARD")
+      @displayer.moveView("FORWARD")
     when GLUT::KEY_DOWN
-        @displayer.moveView("BACKWARD")
+      @displayer.moveView("BACKWARD")
     when GLUT::KEY_LEFT
-        @displayer.moveView("LEFT")
+      @displayer.moveView("LEFT")
     when GLUT::KEY_RIGHT
-        @displayer.moveView("RIGHT")
+      @displayer.moveView("RIGHT")
     when GLUT::KEY_PAGE_UP
-        @displayer.rotateView("UP")
+      @displayer.rotateView("UP")
     when GLUT::KEY_PAGE_DOWN
-        @displayer.rotateView("DOWN")
+      @displayer.rotateView("DOWN")
     when GLUT::KEY_HOME
-        @displayer.rotateView("BACKWARD")
+      @displayer.rotateView("BACKWARD")
     when GLUT::KEY_END
-        @displayer.rotateView("FORWARD")
+      @displayer.rotateView("FORWARD")
     end
     GLUT.PostRedisplay
   end

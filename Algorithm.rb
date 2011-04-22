@@ -66,9 +66,9 @@ module IncreasingStatesAlgorithm
 
       # tag all the UNDEFINED matching bricks with this brick's value
       matchingBricks.each do |brick|
-          tags[brick.id] = [] if tags[brick.id] == nil
-          debug "tagging brick #{brick.id} with #{currentRule.cc.value}"
-          tags[brick.id] << currentRule.cc.value
+        tags[brick.id] = [] if tags[brick.id] == nil
+        debug "tagging brick #{brick.id} with #{currentRule.cc.value}"
+        tags[brick.id] << currentRule.cc.value
       end
     end
 
