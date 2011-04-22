@@ -15,64 +15,6 @@ def debug(s)
   puts s if $debug #Nest.debuglevel >= level
 end
 
-
-# this mirrors the macro in NestCore/Nest.h
-def nextCellValue(i)
-  i+1
-end
-
-
-def reverseDirection(dir)
-  case dir
-  when nil
-    return nil
-  when UP
-    return DOWN
-  when DOWN
-    return UP
-  else
-    return (dir+3)%6
-  end
-end
-
-def reverseDirectionList(dirList)
-  dirList.collect { |dir| reverseDirection(dir) }
-end
-
-class Array
-  def shuffle
-    self.each_index do |i|
-      r = rand(self.length);
-      self[i],self[r] = self[r],self[i]
-    end
-  end
-
-  def randomElement
-    self[rand(self.length)]
-  end
-
-  def head
-    self.first
-  end
-
-  def tail
-    self[1..(self.length-1)]
-  end
-
-  # def insert(element, index)
-  #   if index > self.length
-  #     self << element
-  #   else
-  #     i = self.length
-  #     until i == index do
-  #       self[i] = self[i-1]
-  #       i -= 1
-  #     end
-  #     self[index] = element
-  #   end
-  # end
-end
-
 Directions = [N, NE, SE, S, SW, NW, DOWN, UP]
 Directions2D = [N, NE, SE, S, SW, NW]
 

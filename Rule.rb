@@ -27,14 +27,31 @@ class Rule < MetaArchitecture
       # moveList is the directions taken from OUR cc to that cell.
 
       if cell.isEmpty && otherRule.cc.matches3D(cell, 0, false)
-
-          reversedList = reverseDirectionList(moveList)
-          result << otherRule.cc.getWithList(reversedList)
-
+        reversedList = reverseDirectionList(moveList)
+        result << otherRule.cc.getWithList(reversedList)
       end
     end
 
     return false if result == []
     return result
+  end
+
+  private
+
+  def reverseDirection(dir)
+    case dir
+    when nil
+      return nil
+    when UP
+      return DOWN
+    when DOWN
+      return UP
+    else
+      return (dir+3)%6
+    end
+  end
+
+  def reverseDirectionList(dirList)
+    dirList.collect { |dir| reverseDirection(dir) }
   end
 end

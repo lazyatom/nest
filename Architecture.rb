@@ -92,14 +92,14 @@ class NestCore::Architecture
 
   def randomValidOrder
     # choose a random start cell
-    startcell = self.to_brick_a.randomElement
+    startcell = random_element(self.to_brick_a)
 
     order = [startcell.id]
     frontier = [startcell]
 
     # start a random walk
     while !frontier.empty? do
-      tmpCell = frontier.randomElement
+      tmpCell = random_element(frontier)
       neighbours = tmpCell.neighbourhoodArray
       neighbours.delete_if do |cell|
         cell == nil || order.include?(cell.id) || cell.isEmpty
@@ -107,7 +107,7 @@ class NestCore::Architecture
       if neighbours.empty?
         frontier.delete(tmpCell)
       else
-        nextCell = neighbours.randomElement
+        nextCell = random_element(neighbours)
         order << nextCell.id
         frontier << nextCell
       end
@@ -418,6 +418,12 @@ class NestCore::Architecture
     a.resetCellIDs
     a.applyOrder(a.randomValidOrder)
     a
+  end
+
+  private
+
+  def random_element(array)
+    array[rand(array.length)]
   end
 end
 

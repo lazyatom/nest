@@ -1,6 +1,12 @@
 require 'Nest3'
 
 module IncreasingStatesAlgorithm
+
+  # this mirrors the macro in NestCore/Nest.h
+  def nextCellValue(i)
+    i+1
+  end
+
   def nextState(states, usedStates=[])
     unusedStates = states - usedStates
     if unusedStates.empty?

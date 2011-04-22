@@ -60,8 +60,8 @@ class Solution
   # an architecture. if no architecture is given, the stored
   # architecture is used.
   def applyTo(arch)
-    startcell = arch.getCell(@geneString.head % @numBricks)
-    genes = @geneString.tail
+    startcell = arch.getCell(head(@geneString) % @numBricks)
+    genes = tail(@geneString)
 
     arch.resetOrdering(UNORDERED_CELL)
 
@@ -100,6 +100,16 @@ class Solution
   def mutate
     geneIndex = rand(@geneStringLength)
     geneString[geneIndex] += 1
+  end
+
+  private
+
+  def head(array)
+    array.first
+  end
+
+  def tail(array)
+    array[1..(array.length-1)]
   end
 end
 
