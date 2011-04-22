@@ -3,13 +3,13 @@ require 'ext/NestCore'
 include NestCore
 
 # load Ruby augmentation classes
-require 'Nest2Architecture'
-require 'Simulation'
-require 'ArchitectureCollection'
-require 'Architecture'
-require 'Algorithm'
+require 'nest_2_architecture'
+require 'simulation'
+require 'architecture_collection'
+require 'architecture'
+require 'algorithm'
 include IncreasingStatesAlgorithm
-require 'Rule'
+require 'rule'
 
 def debug(s)
   puts s if $debug #Nest.debuglevel >= level

@@ -1,4 +1,4 @@
-require 'Nest3'
+require 'nest_3'
 
 module IncreasingStatesAlgorithm
 

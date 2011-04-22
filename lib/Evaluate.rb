@@ -1,4 +1,4 @@
-require 'Algorithm'
+require 'algorithm'
 
 #require 'rbprof'
 #$profiler.profile_method(:moveAllAround, HexCell)

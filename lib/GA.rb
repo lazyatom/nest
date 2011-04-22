@@ -1,5 +1,4 @@
-require 'Nest3'
-require 'condor'
+require 'nest_3'
 
 # MAX_CELLS := the total number of cells in the architecture
 # MAX_LINKS := the size of a neighbourhood, 26 in a 3D hexagonal grid

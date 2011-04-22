@@ -1,6 +1,6 @@
 require 'opengl'
 require 'glut'
-require 'Nest3'
+require 'nest_3'
 
 class GLArchitectureDisplayer
   #
@@ -73,7 +73,7 @@ class GLArchitectureDisplayer
     GL.Enable(GL::LIGHT0)
     GL.Enable(GL::LIGHTING)
 
-    load("gui/GLHexagons.rb")
+    load("gui/gl_hexagons.rb")
 
     createOutlineList()
     createCellList()

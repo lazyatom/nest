@@ -1,4 +1,4 @@
-require 'Nest3'
+require 'nest_3'
 
 class Rule < MetaArchitecture
   def initialize(depth=5)

@@ -1,6 +1,6 @@
-require 'Nest3'
-require 'gui/GLArchitectureDisplayer'
-require 'gui/Buffers'
+require 'nest_3'
+require 'gui/gl_architecture_displayer'
+require 'gui/buffers'
 
 class GLUTViewer2
   WindowName = "Architecture Viewer"

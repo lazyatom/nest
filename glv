@@ -4,7 +4,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift File.expand_path("../ext", __FILE__)
 
 require 'rubygems'
-require 'gui/GLUTViewer2'
+require 'gui/glut_viewer_2'
 
 controller = GLUTViewer2.new
 controller.doArgs(ARGV)

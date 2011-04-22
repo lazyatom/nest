@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'Nest3'
+require 'nest_3'
 
 class Agent
   attr_reader :location, :rules, :id
