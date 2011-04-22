@@ -1,5 +1,5 @@
 # load the C++ extension
-require 'NestCore/NestCore'
+require 'ext/NestCore'
 include NestCore
 
 # load Ruby augmentation classes

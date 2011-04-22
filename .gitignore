@@ -1,0 +1,4 @@
+conftest.dSYM
+*.o
+*.log
+*.bundle
