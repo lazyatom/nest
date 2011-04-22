@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'gui/GLUTViewer2'
+
+controller = GLUTViewer2.new
+controller.doArgs(ARGV)
