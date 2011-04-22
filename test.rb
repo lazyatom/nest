@@ -4,11 +4,10 @@ a = Architecture.ring
 
 startTime = Time.new
 
-10.times {
-    puts a.applyRandomOrder.inspect
-    
-    increasingStates(a)
-}
+10.times do
+  puts a.applyRandomOrder.inspect
+  increasingStates(a)
+end
 
 timeTaken = Time.new - startTime
 puts "[time taken: #{timeTaken}]"

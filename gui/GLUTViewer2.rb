@@ -55,7 +55,7 @@ class GLUTViewer2
   end
 
   # GLUT Callback Functions
-  def display()
+  def display
     @displayer.drawScene
     displayInfo
     GLUT.SwapBuffers
@@ -67,14 +67,14 @@ class GLUTViewer2
     @displayer.reshape(w, h)
   end
 
-  def setOrthographicProjection()
+  def setOrthographicProjection
     # switch to projection mode
     GL.MatrixMode(GL::PROJECTION)
     # save previous matrix which contains the
     # settings for the perspective projection
-    GL.PushMatrix()
+    GL.PushMatrix
     # reset matrix
-    GL.LoadIdentity()
+    GL.LoadIdentity
     # set a 2D orthographic projection
     GLU.Ortho2D(0, @width, 0, @height)
     # invert the y axis, down is positive
@@ -92,8 +92,8 @@ class GLUTViewer2
   end
 
   def drawBox(x,y,w,h)
-    GL.Material(GL::FRONT, GL::AMBIENT, @displayer.lineMaterial())
-    GL.Material(GL::FRONT, GL::DIFFUSE, @displayer.lineMaterial())
+    GL.Material(GL::FRONT, GL::AMBIENT, @displayer.lineMaterial)
+    GL.Material(GL::FRONT, GL::DIFFUSE, @displayer.lineMaterial)
     GL.LineWidth(1)
     GL.Begin(GL::LINE_LOOP)
       GL.Vertex(x,y,0)
@@ -123,7 +123,7 @@ class GLUTViewer2
   end
 
 
-  def displayInfo()
+  def displayInfo
     setOrthographicProjection
     GL.PushMatrix
     GL.LoadIdentity
@@ -182,28 +182,28 @@ class GLUTViewer2
     end
   end
 
-  def currentFile()
-    if buffer() != nil
-      buffer().filename.to_s
+  def currentFile
+    if buffer != nil
+      buffer.filename.to_s
     else
       "nothing"
     end
   end
 
-  def getArchInfo()
-    if buffer().architecture != nil
-      return "#{buffer().architecture.numBricks} bricks, " +
-             "#{buffer().architecture.numStates} states"
+  def getArchInfo
+    if buffer.architecture != nil
+      return "#{buffer.architecture.numBricks} bricks, " +
+             "#{buffer.architecture.numStates} states"
     else
       return "nothing"
     end
   end
 
-  def lastMessage2()
+  def lastMessage2
     return @message2.to_s
   end
 
-  def lastMessage3()
+  def lastMessage3
     return @message3.to_s
   end
 
@@ -250,7 +250,7 @@ class GLUTViewer2
     multiplier = 1
     if @animate
       if @displayer.highlightRules
-        nextRule()
+        nextRule
         multiplier = 5
       else
         @displayer.rotateView("FORWARD", 3) if @animateX
@@ -294,9 +294,9 @@ class GLUTViewer2
   def quitModeKeys(key, i, j)
     case key
     when 121 # "y"
-      quit()
+      quit
     else
-      cancelMode()
+      cancelMode
       setMessage("Quit cancelled.")
     end
   end
@@ -304,19 +304,19 @@ class GLUTViewer2
   def newModeKeys(key, i, j)
     case key
     when 97 # 'a'
-      newBuffer(ArchitectureBuffer.new())
+      newBuffer(ArchitectureBuffer.new)
       setMessage("New architecture buffer")
-      cancelMode()
+      cancelMode
     when 114 # 'r'
-      newBuffer(RuleCollectionBuffer.new())
+      newBuffer(RuleCollectionBuffer.new)
       setMessage("New rule collection buffer")
-      cancelMode()
+      cancelMode
     when 115 # 's'
-      newBuffer(SimulationBuffer.new())
+      newBuffer(SimulationBuffer.new)
       setMessage("New simulation buffer")
-      cancelMode()
+      cancelMode
     else
-      cancelMode()
+      cancelMode
       setMessage("New buffer cancelled.")
     end
   end
@@ -326,21 +326,21 @@ class GLUTViewer2
     when 13
       if @mode == :load
         result = loadBuffer(@loadFilename)
-        cancelMode()
+        cancelMode
         if result
             setMessage("Load succeeded.")
         else
             setMessage("Couldn't load '" + @loadFilename + "'");
         end
       elsif @mode == :saveAs
-        result = buffer().save(@loadFilename)
-        cancelMode()
+        result = buffer.save(@loadFilename)
+        cancelMode
         setMessage("Saved as `" + @loadFilename + "'")
       end
     when 127 # backspace
       @loadFilename.slice!(@loadFilename.length-1)
     when 27 # esc
-      cancelMode()
+      cancelMode
       setMessage("Cancelled.")
     else
       @loadFilename << key
@@ -394,7 +394,7 @@ class GLUTViewer2
 
     ####### RESERVED MODE KEYS ########
     when 17 # 'ctrl-q'
-        quit()
+        quit
     when 113 # 'q'
        setMode(:quit)
        setMessage("Quit? [y/n] _")
@@ -408,9 +408,9 @@ class GLUTViewer2
 
     ####### BUFFER CHANGE ########
     when 44 # '<' - change to previous buffer
-        previousBuffer()
+        previousBuffer
     when 46 # '>' - change to the next buffer
-        nextBuffer()
+        nextBuffer
 
 
     ####### CELL DISPLAY #########

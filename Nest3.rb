@@ -95,9 +95,9 @@ class NestCore::HexCell
   end
 
   def to_s
-    #id()
-    #value()
-    "HexCell #{id()} (#{value()})"
+    #id
+    #value
+    "HexCell #{id} (#{value})"
   end
 
   # gives every cell around this cell, along with directions
