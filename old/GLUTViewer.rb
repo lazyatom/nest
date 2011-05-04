@@ -182,7 +182,7 @@ class GLUTViewer
 
           ####### CURSOR CELL EDITING ###########
           when 32 # spacebar - insert a new cell at the cursor
-              if (@displayer.cursor.neighbourhoodArray.delete_if {|c| emptyCell(c) }.length > 0) ||
+              if (@displayer.cursor.neighbourhoodArray.delete_if {|c| Nest3.emptyCell(c) }.length > 0) ||
                   (@displayer.architecture.numBricks == 0)
                   @displayer.nextCellAtCursor()
               else

@@ -1,7 +1,7 @@
 #ifndef __ARCHITECTURE__
 #define __ARCHITECTURE__
 
-#include "NestCore.h"
+#include "Nest3.h"
 #include "MetaArchitecture.h"
 #include "Rule.h"
 

@@ -1,7 +1,7 @@
 #ifndef __CELLDATA__
 #define __CELLDATA__
 
-#include "NestCore.h"
+#include "Nest3.h"
 
 class CellData {
 	public:

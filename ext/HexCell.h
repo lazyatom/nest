@@ -2,7 +2,7 @@
 #define __HEXCELL__
 
 
-#include "NestCore.h"
+#include "Nest3.h"
 #include "Cell.h"
 #include "MetaArchitecture.h"
 #include "CellData.h"
@@ -16,25 +16,25 @@ bool emptyCell(HexCell *cell);
 
 class HexCell : public Cell {
 
-	private:
-		CellData *data;
-		double x, y, z;
-		MetaArchitecture *myArch;
+  private:
+    double x, y, z;
+    MetaArchitecture *myArch;
 
-	public:
-		bool coordsSet;
-	
-		HexCell *next, *prev;
+  public:
+    CellData *data;
+    bool coordsSet;
 
-	public:
+    HexCell *next, *prev;
 
-		HexCell(CELL_VALUE v=CELL_EMPTY, MetaArchitecture *arch=NULL);
-		~HexCell();
+  public:
 
-		HexCell *getNeighbour(DIRECTION dir);
-		HexCell *get(DIRECTION dir);
-		HexCell *setNeighbour(DIRECTION dir, HexCell *cell);
-		HexCell *set(DIRECTION dir, CELL_VALUE val);
+    HexCell(CELL_VALUE v=CELL_EMPTY, MetaArchitecture *arch=NULL);
+    ~HexCell();
+
+    HexCell *getNeighbour(DIRECTION dir);
+    HexCell *get(DIRECTION dir);
+    HexCell *setNeighbour(DIRECTION dir, HexCell *cell);
+    HexCell *set(DIRECTION dir, CELL_VALUE val);
 
 
     HexCell *n() { return get(N); }
@@ -47,69 +47,69 @@ class HexCell : public Cell {
     HexCell *down() { return get(DOWN); }
 
 
-		CELL_VALUE value();
-		bool setValue(CELL_VALUE val);
+    CELL_VALUE value();
+    bool setValue(CELL_VALUE val);
 
-		int order();
-		void setOrder(int o);
+    int order();
+    void setOrder(int o);
 
-        // returns the common ID for this cell	
-		int id();
-		void setId(int id);
+    // returns the common ID for this cell
+    int id();
+    void setId(int id);
 
-        // returns the OBJECT ID of the cellData object
-        // i.e. Cells with identical cellDataIds share the same data
-        // and therefore correspond to the same Cell.		
-		int cellDataId();
-	
-        // this modifies the information regarding the rule
-        // which placed a brick in this cell
-		int ruleID();
-		void setRuleID(int r);
+    // returns the OBJECT ID of the cellData object
+    // i.e. Cells with identical cellDataIds share the same data
+    // and therefore correspond to the same Cell.
+    int cellDataId();
 
-		bool isEmpty();
-		bool isDefined();
-		bool isDifferentiatedFrom(HexCell *cell);
-	
-		void replaceData(CellData *newData);
-		
-		void setCoords(double cx, double cy, double zc);
-		double getX() { return x; }
-		double getY() { return y; }
-		double getZ() { return z; }
+    // this modifies the information regarding the rule
+    // which placed a brick in this cell
+    int ruleID();
+    void setRuleID(int r);
 
-		CELL_VALUE getNeighbourValue(DIRECTION dir);
+    bool isEmpty();
+    bool isDefined();
+    bool isDifferentiatedFrom(HexCell *cell);
 
-		void prepFor3DMatching();
-		void expandSpaceAround();
-		void expand2DSpaceAround();
-		
-		bool matches(HexCell *cell);
-		bool matches2D(HexCell *cell, int rotation=0, bool matchCenter=true);
-		bool matches3D(HexCell *cell, int rotation=0, bool matchCenter=true);
+    void replaceData(CellData *newData);
 
-		bool matchValue(CELL_VALUE val);
+    void setCoords(double cx, double cy, double zc);
+    double getX() { return x; }
+    double getY() { return y; }
+    double getZ() { return z; }
 
-		bool equals(HexCell *cell);
-		bool equals2D(HexCell *cell);
-		bool equals3D(HexCell *cell);
+    CELL_VALUE getNeighbourValue(DIRECTION dir);
 
-		void print2D();
-		void print3D();
-		
-		// produce a copy of the structure of this cell's neighbourhood
-		// but sharing the cell data information
-		void mapOnto(HexCell *cell);
-		
-		// remove cells from out neighbourhood which are ordered after
-		// this one.
-		void filterUsingOrder();
-		
-		
-		/********** RUBY *********/
-		HexCell *getWithList(VALUE list);
-		HexCell *getWithListFAST(int dir1, int dir2);
-		
+    void prepFor3DMatching();
+    void expandSpaceAround();
+    void expand2DSpaceAround();
+
+    bool matches(HexCell *cell);
+    bool matches2D(HexCell *cell, int rotation=0, bool matchCenter=true);
+    bool matches3D(HexCell *cell, int rotation=0, bool matchCenter=true);
+
+    bool matchValue(CELL_VALUE val);
+
+    bool equals(HexCell *cell);
+    bool equals2D(HexCell *cell);
+    bool equals3D(HexCell *cell);
+
+    void print2D();
+    void print3D();
+
+    // produce a copy of the structure of this cell's neighbourhood
+    // but sharing the cell data information
+    void mapOnto(HexCell *cell);
+
+    // remove cells from out neighbourhood which are ordered after
+    // this one.
+    void filterUsingOrder();
+
+
+    /********** RUBY *********/
+    HexCell *getWithList(VALUE list);
+    HexCell *getWithListFAST(int dir1, int dir2);
+
 };
 
 #endif

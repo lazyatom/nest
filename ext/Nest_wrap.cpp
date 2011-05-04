@@ -1559,10 +1559,10 @@ static swig_module_info swig_module = {swig_types, 11, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_init    Init_NestCore
-#define SWIG_name    "NestCore"
+#define SWIG_init    Init_Nest3
+#define SWIG_name    "Nest3"
 
-static VALUE mNestCore;
+static VALUE mNest3;
 
 #define SWIGVERSION 0x010331 
 #define SWIG_VERSION SWIGVERSION
@@ -1577,7 +1577,7 @@ static VALUE mNestCore;
 
 #include "Cell.h"
 #include "HexCell.h"
-#include "NestCore.h"
+#include "Nest3.h"
 #include "CellData.h"
 #include "MetaArchitecture.h"
 #include "Architecture.h"
@@ -3165,6 +3165,60 @@ fail:
 
 
 swig_class cHexCell;
+
+SWIGINTERN VALUE
+_wrap_HexCell_data_set(int argc, VALUE *argv, VALUE self) {
+  HexCell *arg1 = (HexCell *) 0 ;
+  CellData *arg2 = (CellData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HexCell, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data" "', argument " "1"" of type '" "HexCell *""'"); 
+  }
+  arg1 = reinterpret_cast< HexCell * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_CellData, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "data" "', argument " "2"" of type '" "CellData *""'"); 
+  }
+  arg2 = reinterpret_cast< CellData * >(argp2);
+  if (arg1) (arg1)->data = arg2;
+  
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_HexCell_data_get(int argc, VALUE *argv, VALUE self) {
+  HexCell *arg1 = (HexCell *) 0 ;
+  CellData *result = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HexCell, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data" "', argument " "1"" of type '" "HexCell *""'"); 
+  }
+  arg1 = reinterpret_cast< HexCell * >(argp1);
+  result = (CellData *) ((arg1)->data);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_CellData, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
 
 SWIGINTERN VALUE
 _wrap_HexCell_coordsSet_set(int argc, VALUE *argv, VALUE self) {
@@ -6921,11 +6975,11 @@ SWIG_PropagateClientData(void) {
 #ifdef __cplusplus
 extern "C"
 #endif
-SWIGEXPORT void Init_NestCore(void) {
+SWIGEXPORT void Init_Nest3(void) {
   size_t i;
   
   SWIG_InitRuntime();
-  mNestCore = rb_define_module("NestCore");
+  mNest3 = rb_define_module("Nest3");
   
   SWIG_InitializeModule(0);
   for (i = 0; i < swig_module.size; i++) {
@@ -6934,7 +6988,7 @@ SWIGEXPORT void Init_NestCore(void) {
   
   SWIG_RubyInitializeTrackings();
   
-  cCell.klass = rb_define_class_under(mNestCore, "Cell", rb_cObject);
+  cCell.klass = rb_define_class_under(mNest3, "Cell", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_Cell, (void *) &cCell);
   rb_define_alloc_func(cCell.klass, _wrap_Cell_allocate);
   rb_define_method(cCell.klass, "initialize", VALUEFUNC(_wrap_new_Cell), -1);
@@ -6972,7 +7026,7 @@ SWIGEXPORT void Init_NestCore(void) {
   cCell.destroy = (void (*)(void *)) free_Cell;
   cCell.trackObjects = 0;
   
-  cCellData.klass = rb_define_class_under(mNestCore, "CellData", rb_cObject);
+  cCellData.klass = rb_define_class_under(mNest3, "CellData", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_CellData, (void *) &cCellData);
   rb_define_alloc_func(cCellData.klass, _wrap_CellData_allocate);
   rb_define_method(cCellData.klass, "initialize", VALUEFUNC(_wrap_new_CellData), -1);
@@ -6992,13 +7046,15 @@ SWIGEXPORT void Init_NestCore(void) {
   cCellData.mark = 0;
   cCellData.destroy = (void (*)(void *)) free_CellData;
   cCellData.trackObjects = 0;
-  rb_define_module_function(mNestCore, "valueOfCell", VALUEFUNC(_wrap_valueOfCell), -1);
-  rb_define_module_function(mNestCore, "emptyCell", VALUEFUNC(_wrap_emptyCell), -1);
+  rb_define_module_function(mNest3, "valueOfCell", VALUEFUNC(_wrap_valueOfCell), -1);
+  rb_define_module_function(mNest3, "emptyCell", VALUEFUNC(_wrap_emptyCell), -1);
   
-  cHexCell.klass = rb_define_class_under(mNestCore, "HexCell", ((swig_class *) SWIGTYPE_p_Cell->clientdata)->klass);
+  cHexCell.klass = rb_define_class_under(mNest3, "HexCell", ((swig_class *) SWIGTYPE_p_Cell->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_HexCell, (void *) &cHexCell);
   rb_define_alloc_func(cHexCell.klass, _wrap_HexCell_allocate);
   rb_define_method(cHexCell.klass, "initialize", VALUEFUNC(_wrap_new_HexCell), -1);
+  rb_define_method(cHexCell.klass, "data=", VALUEFUNC(_wrap_HexCell_data_set), -1);
+  rb_define_method(cHexCell.klass, "data", VALUEFUNC(_wrap_HexCell_data_get), -1);
   rb_define_method(cHexCell.klass, "coordsSet=", VALUEFUNC(_wrap_HexCell_coordsSet_set), -1);
   rb_define_method(cHexCell.klass, "coordsSet", VALUEFUNC(_wrap_HexCell_coordsSet_get), -1);
   rb_define_method(cHexCell.klass, "next=", VALUEFUNC(_wrap_HexCell_next_set), -1);
@@ -7054,52 +7110,52 @@ SWIGEXPORT void Init_NestCore(void) {
   cHexCell.mark = 0;
   cHexCell.destroy = (void (*)(void *)) free_HexCell;
   cHexCell.trackObjects = 0;
-  rb_define_const(mNestCore, "CELL_ERROR", SWIG_From_int(static_cast< int >(0)));
-  rb_define_const(mNestCore, "CELL_NIL", SWIG_From_int(static_cast< int >(1)));
-  rb_define_const(mNestCore, "CELL_EMPTY", SWIG_From_int(static_cast< int >(2)));
-  rb_define_const(mNestCore, "CELL_UNDEFINED", SWIG_From_int(static_cast< int >(3)));
-  rb_define_const(mNestCore, "CELL_RED", SWIG_From_int(static_cast< int >(4)));
-  rb_define_const(mNestCore, "CELL_BLUE", SWIG_From_int(static_cast< int >(5)));
-  rb_define_const(mNestCore, "CELL_GREEN", SWIG_From_int(static_cast< int >(6)));
-  rb_define_const(mNestCore, "CELL_YELLOW", SWIG_From_int(static_cast< int >(7)));
-  rb_define_const(mNestCore, "CELL_CYAN", SWIG_From_int(static_cast< int >(8)));
-  rb_define_const(mNestCore, "CELL_MAGENTA", SWIG_From_int(static_cast< int >(9)));
-  rb_define_const(mNestCore, "CELL_ORANGE", SWIG_From_int(static_cast< int >(10)));
-  rb_define_const(mNestCore, "CELL_DARK_RED", SWIG_From_int(static_cast< int >(11)));
-  rb_define_const(mNestCore, "CELL_DARK_GREEN", SWIG_From_int(static_cast< int >(12)));
-  rb_define_const(mNestCore, "CELL_DARK_BLUE", SWIG_From_int(static_cast< int >(13)));
-  rb_define_const(mNestCore, "CELL_DARK_CYAN", SWIG_From_int(static_cast< int >(14)));
-  rb_define_const(mNestCore, "CELL_DARK_MAGENTA", SWIG_From_int(static_cast< int >(15)));
-  rb_define_const(mNestCore, "CELL_DARK_YELLOW", SWIG_From_int(static_cast< int >(16)));
-  rb_define_const(mNestCore, "CELL_DARK_ORANGE", SWIG_From_int(static_cast< int >(17)));
-  rb_define_const(mNestCore, "CELL_LIGHT_RED", SWIG_From_int(static_cast< int >(18)));
-  rb_define_const(mNestCore, "CELL_LIGHT_GREEN", SWIG_From_int(static_cast< int >(19)));
-  rb_define_const(mNestCore, "CELL_LIGHT_BLUE", SWIG_From_int(static_cast< int >(20)));
-  rb_define_const(mNestCore, "CELL_LIGHT_CYAN", SWIG_From_int(static_cast< int >(21)));
-  rb_define_const(mNestCore, "CELL_LIGHT_MAGENTA", SWIG_From_int(static_cast< int >(22)));
-  rb_define_const(mNestCore, "CELL_LIGHT_YELLOW", SWIG_From_int(static_cast< int >(23)));
-  rb_define_const(mNestCore, "CELL_LIGHT_ORANGE", SWIG_From_int(static_cast< int >(24)));
-  rb_define_const(mNestCore, "CELL_WHITE", SWIG_From_int(static_cast< int >(25)));
-  rb_define_const(mNestCore, "CELL_GREY", SWIG_From_int(static_cast< int >(26)));
-  rb_define_const(mNestCore, "CELL_LIGHT_GREY", SWIG_From_int(static_cast< int >(27)));
-  rb_define_const(mNestCore, "CELL_DARK_GREY", SWIG_From_int(static_cast< int >(28)));
-  rb_define_const(mNestCore, "N", SWIG_From_int(static_cast< int >(0)));
-  rb_define_const(mNestCore, "NE", SWIG_From_int(static_cast< int >(1)));
-  rb_define_const(mNestCore, "SE", SWIG_From_int(static_cast< int >(2)));
-  rb_define_const(mNestCore, "S", SWIG_From_int(static_cast< int >(3)));
-  rb_define_const(mNestCore, "SW", SWIG_From_int(static_cast< int >(4)));
-  rb_define_const(mNestCore, "NW", SWIG_From_int(static_cast< int >(5)));
-  rb_define_const(mNestCore, "UP", SWIG_From_int(static_cast< int >(7)));
-  rb_define_const(mNestCore, "DOWN", SWIG_From_int(static_cast< int >(6)));
-  rb_define_const(mNestCore, "PARENT", SWIG_From_int(static_cast< int >(7)));
-  rb_define_const(mNestCore, "DIRECTION_ERROR", SWIG_From_int(static_cast< int >(-1)));
-  rb_define_const(mNestCore, "DIRECTION_NIL", SWIG_From_int(static_cast< int >(-1)));
-  rb_define_const(mNestCore, "NUM_DIRECTIONS", SWIG_From_int(static_cast< int >(8)));
-  rb_define_const(mNestCore, "NUM_CARDINAL_DIRECTIONS", SWIG_From_int(static_cast< int >(6)));
-  rb_define_singleton_method(mNestCore, "debuglevel", VALUEFUNC(debuglevel_get), 0);
-  rb_define_singleton_method(mNestCore, "debuglevel=", VALUEFUNC(debuglevel_set), 1);
+  rb_define_const(mNest3, "CELL_ERROR", SWIG_From_int(static_cast< int >(0)));
+  rb_define_const(mNest3, "CELL_NIL", SWIG_From_int(static_cast< int >(1)));
+  rb_define_const(mNest3, "CELL_EMPTY", SWIG_From_int(static_cast< int >(2)));
+  rb_define_const(mNest3, "CELL_UNDEFINED", SWIG_From_int(static_cast< int >(3)));
+  rb_define_const(mNest3, "CELL_RED", SWIG_From_int(static_cast< int >(4)));
+  rb_define_const(mNest3, "CELL_BLUE", SWIG_From_int(static_cast< int >(5)));
+  rb_define_const(mNest3, "CELL_GREEN", SWIG_From_int(static_cast< int >(6)));
+  rb_define_const(mNest3, "CELL_YELLOW", SWIG_From_int(static_cast< int >(7)));
+  rb_define_const(mNest3, "CELL_CYAN", SWIG_From_int(static_cast< int >(8)));
+  rb_define_const(mNest3, "CELL_MAGENTA", SWIG_From_int(static_cast< int >(9)));
+  rb_define_const(mNest3, "CELL_ORANGE", SWIG_From_int(static_cast< int >(10)));
+  rb_define_const(mNest3, "CELL_DARK_RED", SWIG_From_int(static_cast< int >(11)));
+  rb_define_const(mNest3, "CELL_DARK_GREEN", SWIG_From_int(static_cast< int >(12)));
+  rb_define_const(mNest3, "CELL_DARK_BLUE", SWIG_From_int(static_cast< int >(13)));
+  rb_define_const(mNest3, "CELL_DARK_CYAN", SWIG_From_int(static_cast< int >(14)));
+  rb_define_const(mNest3, "CELL_DARK_MAGENTA", SWIG_From_int(static_cast< int >(15)));
+  rb_define_const(mNest3, "CELL_DARK_YELLOW", SWIG_From_int(static_cast< int >(16)));
+  rb_define_const(mNest3, "CELL_DARK_ORANGE", SWIG_From_int(static_cast< int >(17)));
+  rb_define_const(mNest3, "CELL_LIGHT_RED", SWIG_From_int(static_cast< int >(18)));
+  rb_define_const(mNest3, "CELL_LIGHT_GREEN", SWIG_From_int(static_cast< int >(19)));
+  rb_define_const(mNest3, "CELL_LIGHT_BLUE", SWIG_From_int(static_cast< int >(20)));
+  rb_define_const(mNest3, "CELL_LIGHT_CYAN", SWIG_From_int(static_cast< int >(21)));
+  rb_define_const(mNest3, "CELL_LIGHT_MAGENTA", SWIG_From_int(static_cast< int >(22)));
+  rb_define_const(mNest3, "CELL_LIGHT_YELLOW", SWIG_From_int(static_cast< int >(23)));
+  rb_define_const(mNest3, "CELL_LIGHT_ORANGE", SWIG_From_int(static_cast< int >(24)));
+  rb_define_const(mNest3, "CELL_WHITE", SWIG_From_int(static_cast< int >(25)));
+  rb_define_const(mNest3, "CELL_GREY", SWIG_From_int(static_cast< int >(26)));
+  rb_define_const(mNest3, "CELL_LIGHT_GREY", SWIG_From_int(static_cast< int >(27)));
+  rb_define_const(mNest3, "CELL_DARK_GREY", SWIG_From_int(static_cast< int >(28)));
+  rb_define_const(mNest3, "N", SWIG_From_int(static_cast< int >(0)));
+  rb_define_const(mNest3, "NE", SWIG_From_int(static_cast< int >(1)));
+  rb_define_const(mNest3, "SE", SWIG_From_int(static_cast< int >(2)));
+  rb_define_const(mNest3, "S", SWIG_From_int(static_cast< int >(3)));
+  rb_define_const(mNest3, "SW", SWIG_From_int(static_cast< int >(4)));
+  rb_define_const(mNest3, "NW", SWIG_From_int(static_cast< int >(5)));
+  rb_define_const(mNest3, "UP", SWIG_From_int(static_cast< int >(7)));
+  rb_define_const(mNest3, "DOWN", SWIG_From_int(static_cast< int >(6)));
+  rb_define_const(mNest3, "PARENT", SWIG_From_int(static_cast< int >(7)));
+  rb_define_const(mNest3, "DIRECTION_ERROR", SWIG_From_int(static_cast< int >(-1)));
+  rb_define_const(mNest3, "DIRECTION_NIL", SWIG_From_int(static_cast< int >(-1)));
+  rb_define_const(mNest3, "NUM_DIRECTIONS", SWIG_From_int(static_cast< int >(8)));
+  rb_define_const(mNest3, "NUM_CARDINAL_DIRECTIONS", SWIG_From_int(static_cast< int >(6)));
+  rb_define_singleton_method(mNest3, "debuglevel", VALUEFUNC(debuglevel_get), 0);
+  rb_define_singleton_method(mNest3, "debuglevel=", VALUEFUNC(debuglevel_set), 1);
   
-  cMetaArchitecture.klass = rb_define_class_under(mNestCore, "MetaArchitecture", rb_cObject);
+  cMetaArchitecture.klass = rb_define_class_under(mNest3, "MetaArchitecture", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_MetaArchitecture, (void *) &cMetaArchitecture);
   rb_define_alloc_func(cMetaArchitecture.klass, _wrap_MetaArchitecture_allocate);
   rb_define_method(cMetaArchitecture.klass, "initialize", VALUEFUNC(_wrap_new_MetaArchitecture), -1);
@@ -7139,7 +7195,7 @@ SWIGEXPORT void Init_NestCore(void) {
   cMetaArchitecture.destroy = (void (*)(void *)) free_MetaArchitecture;
   cMetaArchitecture.trackObjects = 0;
   
-  cArchitecture.klass = rb_define_class_under(mNestCore, "Architecture", ((swig_class *) SWIGTYPE_p_MetaArchitecture->clientdata)->klass);
+  cArchitecture.klass = rb_define_class_under(mNest3, "Architecture", ((swig_class *) SWIGTYPE_p_MetaArchitecture->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_Architecture, (void *) &cArchitecture);
   rb_define_alloc_func(cArchitecture.klass, _wrap_Architecture_allocate);
   rb_define_method(cArchitecture.klass, "initialize", VALUEFUNC(_wrap_new_Architecture), -1);
@@ -7152,9 +7208,9 @@ SWIGEXPORT void Init_NestCore(void) {
   cArchitecture.mark = 0;
   cArchitecture.destroy = (void (*)(void *)) free_Architecture;
   cArchitecture.trackObjects = 0;
-  rb_define_module_function(mNestCore, "defaultArchitecture", VALUEFUNC(_wrap_defaultArchitecture), -1);
+  rb_define_module_function(mNest3, "defaultArchitecture", VALUEFUNC(_wrap_defaultArchitecture), -1);
   
-  cRule.klass = rb_define_class_under(mNestCore, "Rule", ((swig_class *) SWIGTYPE_p_MetaArchitecture->clientdata)->klass);
+  cRule.klass = rb_define_class_under(mNest3, "Rule", ((swig_class *) SWIGTYPE_p_MetaArchitecture->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_Rule, (void *) &cRule);
   rb_define_alloc_func(cRule.klass, _wrap_Rule_allocate);
   rb_define_method(cRule.klass, "initialize", VALUEFUNC(_wrap_new_Rule), -1);

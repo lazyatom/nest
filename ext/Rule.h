@@ -1,7 +1,7 @@
 #ifndef __RULE__
 #define __RULE__
 
-#include "NestCore.h"
+#include "Nest3.h"
 #include "MetaArchitecture.h"
 #include "ruby.h"
 

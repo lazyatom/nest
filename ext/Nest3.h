@@ -1,5 +1,5 @@
-#ifndef __NEST__
-#define __NEST__
+#ifndef __NEST_3__
+#define __NEST_3__
 
 #include <cstdio>
 #include <cstdlib>

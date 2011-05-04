@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		014CEA460018CE2711CA2923 = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = "/usr/local/lib/ruby/1.8/powerpc-darwin";
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		014CEA470018CE2711CA2923 = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//010
+//011
+//012
+//013
+//014
+//020
+//021
+//022
+//023
+//024
+		0249A662FF388D9811CA2CEA = {
+			children = (
+				0249A663FF388D9811CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0249A663FF388D9811CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.ar;
+			name = "libstdc++.a";
+			path = "/usr/lib/libstdc++.a";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//020
+//021
+//022
+//023
+//024
+//080
+//081
+//082
+//083
+//084
+		08FB7793FE84155DC02AAC07 = {
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA460018CE2711CA2923,
+				014CEA470018CE2711CA2923,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 08FB7794FE84155DC02AAC07;
+			projectDirPath = "";
+			targets = (
+				8DD76F620486A84900D96B5E,
+			);
+		};
+		08FB7794FE84155DC02AAC07 = {
+			children = (
+				08FB7795FE84155DC02AAC07,
+				C6859E8C029090F304C91782,
+				0249A662FF388D9811CA2CEA,
+				1AB674ADFE9D54B511CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Nest-3.0";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 = {
+			children = (
+				1AD9A54906A932390079822C,
+				1AD9A54A06A932390079822C,
+				1AD9A55106A932390079822C,
+				1AD9A55206A932390079822C,
+				1AD9A55306A932390079822C,
+				1AD9A53A06A932390079822C,
+				1AD9A53B06A932390079822C,
+				1AD9A53D06A932390079822C,
+				1AD9A53E06A932390079822C,
+				1AD9A54006A932390079822C,
+				1AD9A54106A932390079822C,
+				1AD9A54406A932390079822C,
+				1AD9A54506A932390079822C,
+				08FB7796FE84155DC02AAC07,
+			);
+			isa = PBXGroup;
+			name = Source;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		08FB7796FE84155DC02AAC07 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = main.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//1A0
+//1A1
+//1A2
+//1A3
+//1A4
+		1AB674ADFE9D54B511CA2CBB = {
+			children = (
+				8DD76F6C0486A84900D96B5E,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A53A06A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = Architecture.cpp;
+			path = NestCore/Architecture.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A53B06A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Architecture.h;
+			path = NestCore/Architecture.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A53D06A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = Cell.cpp;
+			path = NestCore/Cell.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A53E06A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Cell.h;
+			path = NestCore/Cell.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54006A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = CellData.cpp;
+			path = NestCore/CellData.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54106A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = CellData.h;
+			path = NestCore/CellData.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54406A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = HexCell.cpp;
+			path = NestCore/HexCell.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54506A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = HexCell.h;
+			path = NestCore/HexCell.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54906A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = MetaArchitecture.cpp;
+			path = NestCore/MetaArchitecture.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A54A06A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MetaArchitecture.h;
+			path = NestCore/MetaArchitecture.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A55106A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NestCore.h;
+			path = NestCore/NestCore.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A55206A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = Rule.cpp;
+			path = NestCore/Rule.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A55306A932390079822C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Rule.h;
+			path = NestCore/Rule.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1AD9A55806A932390079822C = {
+			fileRef = 1AD9A53A06A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A55906A932390079822C = {
+			fileRef = 1AD9A53B06A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A55B06A932390079822C = {
+			fileRef = 1AD9A53D06A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A55C06A932390079822C = {
+			fileRef = 1AD9A53E06A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A55E06A932390079822C = {
+			fileRef = 1AD9A54006A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A55F06A932390079822C = {
+			fileRef = 1AD9A54106A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A56206A932390079822C = {
+			fileRef = 1AD9A54406A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A56306A932390079822C = {
+			fileRef = 1AD9A54506A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A56706A932390079822C = {
+			fileRef = 1AD9A54906A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A56806A932390079822C = {
+			fileRef = 1AD9A54A06A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A56F06A932390079822C = {
+			fileRef = 1AD9A55106A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A57006A932390079822C = {
+			fileRef = 1AD9A55206A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		1AD9A57106A932390079822C = {
+			fileRef = 1AD9A55306A932390079822C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//1A0
+//1A1
+//1A2
+//1A3
+//1A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8DD76F620486A84900D96B5E = {
+			buildPhases = (
+				8DD76F630486A84900D96B5E,
+				8DD76F640486A84900D96B5E,
+				8DD76F660486A84900D96B5E,
+				8DD76F680486A84900D96B5E,
+				8DD76F690486A84900D96B5E,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-g";
+				PRODUCT_NAME = "Nest-3.0";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = "Nest-3.0";
+			productInstallPath = "$(HOME)/bin";
+			productName = "Nest-3.0";
+			productReference = 8DD76F6C0486A84900D96B5E;
+			productType = "com.apple.product-type.tool";
+		};
+		8DD76F630486A84900D96B5E = {
+			buildActionMask = 2147483647;
+			files = (
+				1AD9A55906A932390079822C,
+				1AD9A55C06A932390079822C,
+				1AD9A55F06A932390079822C,
+				1AD9A56306A932390079822C,
+				1AD9A56806A932390079822C,
+				1AD9A56F06A932390079822C,
+				1AD9A57106A932390079822C,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F640486A84900D96B5E = {
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F650486A84900D96B5E,
+				1AD9A55806A932390079822C,
+				1AD9A55B06A932390079822C,
+				1AD9A55E06A932390079822C,
+				1AD9A56206A932390079822C,
+				1AD9A56706A932390079822C,
+				1AD9A57006A932390079822C,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F650486A84900D96B5E = {
+			fileRef = 08FB7796FE84155DC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+				COMPILER_FLAGS = "-I/usr/local/lib/ruby/1.8/powerpc-darwin";
+			};
+		};
+		8DD76F660486A84900D96B5E = {
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F670486A84900D96B5E,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F670486A84900D96B5E = {
+			fileRef = 0249A663FF388D9811CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8DD76F680486A84900D96B5E = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76F690486A84900D96B5E = {
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E,
+			);
+			isa = PBXCopyFilesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		8DD76F6A0486A84900D96B5E = {
+			fileRef = C6859E8B029090EE04C91782;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8DD76F6C0486A84900D96B5E = {
+			explicitFileType = "compiled.mach-o.executable";
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = "Nest-3.0";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//C60
+//C61
+//C62
+//C63
+//C64
+		C6859E8B029090EE04C91782 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.man;
+			path = "Nest-3.0.1";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 = {
+			children = (
+				C6859E8B029090EE04C91782,
+			);
+			isa = PBXGroup;
+			name = Documentation;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+	};
+	rootObject = 08FB7793FE84155DC02AAC07;
+}
